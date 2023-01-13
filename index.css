@@ -9,8 +9,8 @@
   border-radius: 100%;
 }
 .logocontainer {
-position: fixed;
-top: 0px;
+  position: fixed;
+  top: 0px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,7 +30,6 @@ top: 0px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  
 }
 
 .container::before {
@@ -158,7 +157,7 @@ nav form button {
   }
   .weather {
     flex-direction: column;
-    margin-top: 100px;
+    margin-top: 80px;
   }
   .weather3 span {
     margin-top: 50px;
@@ -177,7 +176,7 @@ nav form button {
   .degree {
     display: none;
   }
-  .weather p{
+  .weather p {
     text-align: center;
   }
 }

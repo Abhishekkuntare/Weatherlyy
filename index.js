@@ -22,7 +22,7 @@ const fetchData = async (target) => {
     const {
       current: {
         temp_c,
-        condition: { text, icon },
+        condition: { text },
       },
       location: { name, localtime },
     } = data;
@@ -44,7 +44,7 @@ function updateDom(temperate, city, time, text) {
   cityField.innerText = city;
   dateField.innerText = `${exactTime} - ${exactDay}  ${exactDate}`;
   weatherField.innerText = text;
-  console.log(text);
+  // console.log(text);
   toChangeTheEmoji(text);
 
   //   emojiField.src = emoji;
@@ -66,7 +66,11 @@ btn.addEventListener("submit", search);
 //Function to get the name by it's number
 
 function toChangeTheEmoji(condition) {
-  if (condition === "Mist") {
+  let newCondition = condition.split(" ")[0];
+  console.log(newCondition);
+  if (condition === "Fog") {
+    emojiField.src = "fog.gif";
+  } else if (condition === "Mist") {
     emojiField.src = "misst.gif";
   } else if (condition === "Sunny") {
     emojiField.src = "sunny.gif";
@@ -84,6 +88,10 @@ function toChangeTheEmoji(condition) {
     emojiField.src = "rainy.gif";
   } else if (condition === "Light rain") {
     emojiField.src = "rainy.gif";
+  } else if (newCondition === "Freezing") {
+    emojiField.src = "freeze.gif";
+  } else if (newCondition === "Patchy") {
+    emojiField.src = "partysnow.gif";
   }
 }
 

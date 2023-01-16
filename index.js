@@ -9,7 +9,7 @@ const form = document.querySelector("form");
 const btn = document.querySelector("button");
 
 //Default Location
-let target = "India";
+let target = "Amravati";
 
 //Function to fetch data and Weather ApI
 const fetchData = async (target) => {
@@ -59,15 +59,15 @@ function search(e) {
   target = searchField.value;
   fetchData(target);
 }
+
 //Adding event Listerner to the form
 form.addEventListener("submit", search);
 btn.addEventListener("submit", search);
 
-//Function to get the name by it's number
-
+//according to condition name change it's img src
 function toChangeTheEmoji(condition) {
   let newCondition = condition.split(" ")[0];
-  console.log(newCondition);
+
   if (condition === "Fog") {
     emojiField.src = "fog.gif";
   } else if (condition === "Mist") {
@@ -95,6 +95,7 @@ function toChangeTheEmoji(condition) {
   }
 }
 
+//Function to get the name by it's number
 function getDayFullName(num) {
   switch (num) {
     case 0:
